@@ -1,0 +1,30 @@
+CREATE TABLE computer_stuff (id INTEGER PRIMARY KEY, name TEXT, price INTEGER, unit_sales INTEGER, rating INTEGER);
+
+INSERT INTO computer_stuff VALUES (1, "Gaming Mouse", 10, 5, 10.0);
+INSERT INTO computer_stuff VALUES (2, "Light Up Keyboard", 15, 6, 9.0);
+INSERT INTO computer_stuff VALUES (3, "Battery Pack", 20, 34, 10.0);
+INSERT INTO computer_stuff VALUES (4, "Computer Stickers", 25, 77, 8.0);
+INSERT INTO computer_stuff VALUES (5, "Spare Computer Charger", 30, 345, 10.0);
+INSERT INTO computer_stuff VALUES (6, "How to work a computer manual", 35, 374, 6.0);
+INSERT INTO computer_stuff VALUES (7, "Giant Fifty Inch Monitor", 40, 4654, 9.5);
+INSERT INTO computer_stuff VALUES (8, "Webroot Security System Laptop", 45, 38456, 10.0);
+INSERT INTO computer_stuff VALUES (9, "Screen Cleaner for Laptop", 50, 3543, 3.0);
+INSERT INTO computer_stuff VALUES (10, "Cybersecurity course tutorial", 55, 221, 7.0);
+INSERT INTO computer_stuff VALUES (11, "How to build cool Minecraft house tutorial", 60, 34543, 10);
+INSERT INTO computer_stuff VALUES (12, "How to work your terminal tutorial", 65, 24573, 9);
+INSERT INTO computer_stuff VALUES (13, "How to get into your computer after forgetting the password tutorial", 70, 865, 8.8);
+INSERT INTO computer_stuff VALUES (14, "How to get your father in law to like you tutorial", 75, 64556, 10);
+INSERT INTO computer_stuff VALUES (15, "How to use all the information you've been given in this package tutorial", 80, 35487, 2);
+
+
+-- display the database by product ratings greater than 5.
+SELECT * FROM computer_stuff;
+SELECT * FROM computer_stuff
+WHERE rating >=5;
+
+-- what are the most 5 popular products? 
+SELECT name, price, unit_sales
+FROM computer_stuff
+ORDER BY unit_sales desc
+limit 5;
+
