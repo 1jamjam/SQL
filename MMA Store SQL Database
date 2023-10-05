@@ -1,0 +1,58 @@
+CREATE TABLE MMA_STORE 
+(id INTEGER PRIMARY KEY, product TEXT, price INTEGER, quanity INTEGER, rating INTEGER, prod_cost INTEGER);  
+
+INSERT INTO MMA_STORE VALUES 
+(1, "Boxing Gloves", 35, 100, 8, 5);
+INSERT INTO MMA_STORE VALUES
+(2, "Muay Thai Shin Pads", 40, 50, 10, 10); 
+INSERT INTO MMA_STORE VALUES
+(3, "Hand Wraps", 35, 35, 10, 3);
+INSERT INTO MMA_STORE VALUES
+(4, "Heavy Bag", 200, 7, 10, 3);
+INSERT INTO MMA_STORE VALUES
+(5, "Head Gear", 50, 300, 9, 5);
+INSERT INTO MMA_STORE VALUES
+(6, "Elbow Pads", 20, 20, 10, 10);
+INSERT INTO MMA_STORE VALUES
+(7, "Knee Pads", 20, 40, 9, 8);
+INSERT INTO MMA_STORE VALUES
+(8, "Thai Balm", 7, 11, 10, 2);
+INSERT INTO MMA_STORE VALUES
+(9, "Pra Jiad Set", 100, 10, 10, 30);
+INSERT INTO MMA_STORE VALUES
+(10, "Traditional TKD Shoes", 85, 12, 7, 20);
+INSERT INTO MMA_STORE VALUES
+(11, "Traditional Kung Fu Shoes", 88, 3, 10, 33);
+INSERT INTO MMA_STORE VALUES
+(12, "Traditional Karate Shoes", 100, 5, 10, 40);
+INSERT INTO MMA_STORE VALUES
+(13, "Training Pads", 90, 4, 10, 3);
+INSERT INTO MMA_STORE VALUES
+(14, "Ice Bath Tub", 10, 20, 9, 5);
+INSERT INTO MMA_STORE VALUES
+(15, "Muay Thai Competetion Tickets", 50, 1, 10, 4);
+
+--What is the most expensive item in the MMA store, and how many are available in stock? 
+
+SELECT * FROM 
+    MMA_STORE 
+ORDER BY 
+    price DESC;
+--Answer: Heavy Bag ($200, 7 in stock) 
+
+--Which product has the highest profit margin, and how many units are in stock for that product?
+
+SELECT product, (price - prod_cost) 
+    AS profit_margin, quanity
+    FROM MMA_STORE
+ORDER BY profit_margin DESC;
+--Answer: Heavy Bag ($197, 7 in stock)
+
+
+
+
+
+
+
+
+
