@@ -1,0 +1,18 @@
+CREATE TABLE Cool_Humans 
+
+(
+ID INTEGER PRIMARY KEY,
+    name TEXT,
+    age INTEGER,
+    likes TEXT,
+    dislikes TEXT,
+    spouse TEXT,
+    phone_number INTEGER);
+    
+INSERT INTO Cool_Humans
+VALUES (1, 'James', 20, 'MMA', 'unnecessary work', 'Angelita Gregory', 6788582959);
+INSERT INTO Cool_Humans
+VALUES (2, 'Angi', 22, 'Rock Climbing', 'dogs', 'James Gregory', ##########);
+INSERT INTO Cool_Humans 
+VALUES (3, 'Aster', 1, 'Killing Rabbits', 'being hungry', 'n/a', 0);
+SELECT * FROM Cool_Humans;
