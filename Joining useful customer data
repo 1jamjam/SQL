@@ -1,0 +1,13 @@
+SELECT 
+CustomerName,
+OrderTotal,
+State,
+City
+FROM
+KCC.dbo.Customers
+LEFT OUTER JOIN 
+KCC.dbo.Orders 
+ON KCC.dbo.Customers.CustomerID = KCC.dbo.Orders.CustomerID;
+
+--RESULTS:
+--Shows NON-Distinct Customer names as well as their cities, order totals, State and city. 
