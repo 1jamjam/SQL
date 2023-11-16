@@ -1,0 +1,20 @@
+-- This is an excel dataset I sourced from Kaggle to run some SQL queries on to show how I would 
+-- run some data analysis on the worlds largest companies. 
+
+--SELECT TOP (1000) [Rank]
+    --  ,[Name]
+   --   ,[Industry]
+   --   ,[Revenue_USD_millions]
+   --   ,[Revenue_growth]
+   --   ,[Employees]
+   --   ,[Headquarters]
+  --FROM [LargestCompaniesData].[dbo].[Largest_CompaniesSQL]
+
+  -- What are the pharmaceutical companies seeing 3% or more in revenue growth?
+  SELECT Name FROM dbo.Largest_CompaniesSQL WHERE Industry = 'Pharmaceutical industry' AND Revenue_growth >= '3.3%'
+
+  --How many tech companies have a reported revenue growth of more than 15%?
+  SELECT COUNT(Name) FROM dbo.Largest_CompaniesSQL WHERE Revenue_growth > '15%' AND Industry = 'Technology';
+
+  -- What is the collective sum of revenue from all retail companies in the dataset?
+SELECT SUM(Revenue_USD_millions) FROM dbo.Largest_CompaniesSQL WHERE Industry = 'Retail';
