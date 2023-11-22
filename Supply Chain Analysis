@@ -1,0 +1,38 @@
+--Analyzing supply chain manufacturing processes using SQL 
+-- Enjoy!!
+
+--SELECT * FROM dbo.supply_chain_project;
+
+--List all products (SKU's) under haircare where the product costs $20 or less. 
+
+SELECT SKU, Product_type FROM dbo.supply_chain_project WHERE Product_type = 'haircare' AND Price <= '20';
+
+--Figure out which product type has the highest shipping costs. 
+
+SELECT Product_type, Shipping_costs, SKU FROM dbo.supply_chain_project ORDER BY Shipping_costs DESC;
+
+--Pull all of the SKU's with an inspection status of fail, and count how many are failed.
+
+SELECT SKU FROM dbo.supply_chain_project 
+WHERE Inspection_results = 'Fail';
+
+SELECT COUNT(SKU) FROM dbo.supply_chain_project 
+WHERE Inspection_results = 'Fail'
+
+--Pull all of the SKU's with a manufacturing cost of $55 or less, and count the number. 
+SELECT SKU FROM dbo.supply_chain_project
+WHERE Manufacturing_costs <= '55'; 
+
+SELECT COUNT(SKU) FROM dbo.supply_chain_project
+WHERE Manufacturing_costs <= '55';
+
+--Identify all SKU's from supplier 3 
+SELECT SKU FROM dbo.supply_chain_project 
+WHERE Supplier_name = 'Supplier 3';
+
+--Identify all SKU's purchased by females only, and count its total.
+SELECT SKU FROM dbo.supply_chain_project 
+WHERE Customer_demographics = 'Female';
+
+SELECT COUNT(SKU) FROM dbo.supply_chain_project 
+WHERE Customer_demographics = 'Female';
