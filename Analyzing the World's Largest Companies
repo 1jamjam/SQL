@@ -18,3 +18,16 @@
 
   -- What is the collective sum of revenue from all retail companies in the dataset?
 SELECT SUM(Revenue_USD_millions) FROM dbo.Largest_CompaniesSQL WHERE Industry = 'Retail';
+
+SELECT Name, Revenue_growth FROM dbo.Largest_CompaniesSQL
+ORDER BY Revenue_growth DESC;
+
+SELECT 
+    Name, 
+    CASE
+        WHEN REPLACE(Revenue_growth, '%', '') < '25' THEN 'Slow Growth'
+        WHEN REPLACE(Revenue_growth, '%', '') > '25' AND REPLACE(Revenue_growth, '%', '') < '50' THEN 'Moderate to Slow Growth'
+        WHEN REPLACE(Revenue_growth, '%', '') >= '50' AND REPLACE(Revenue_growth, '%', '') < '75' THEN 'Moderate to High Growth'
+        WHEN REPLACE(Revenue_growth, '%', '') >= '75' THEN 'High Growth'
+    END AS Growth_Placement
+FROM dbo.Largest_CompaniesSQL;
