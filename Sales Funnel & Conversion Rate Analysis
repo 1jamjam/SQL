@@ -1,0 +1,56 @@
+-- Conducting a customer journey analysis in tracking customer journey from visiting product pages to adding to cart to purchase.
+-- Goal is to figure out Drop-off rates at each stage, Conversion rates by device, location, and time. 
+
+--Progress Below:
+CREATE TABLE users (
+	user_id INT,
+  	first_name VARCHAR(50),
+  	last_name VARCHAR(50),
+  	created_at DATE,
+  	device_type VARCHAR(50),
+  	location VARCHAR(50)
+);
+
+CREATE TABLE sessions (
+	sessions_id INT,
+  	user_id INT,
+  	session_start DATETIME,
+  	session_end DATETIME
+);
+
+CREATE TABLE event_s (
+	event_id INT,
+  	session_id INT,
+  	user_id INT,
+  	event_type VARCHAR(50), 
+  	event_time DATETIME,
+  	product_id INT
+);
+
+CREATE TABLE products (
+	product_id INT,
+  	product_name VARCHAR(50),
+  	product_price FLOAT,
+  	product_category VARCHAR(50)
+);
+
+INSERT INTO users (user_id, first_name, last_name, created_at, device_type, location) 
+VALUES (1, 'Gabriel', 'Oliveira', '2025-05-25', 'iOS', 'Georgia');
+INSERT INTO users (user_id, first_name, last_name, created_at, device_type, location) 
+VALUES (2, 'Saniya', 'Lee', '2025-05-25', 'iOS', 'New York');
+INSERT INTO users (user_id, first_name, last_name, created_at, device_type, location) 
+VALUES (3, 'Dave', 'Leary', '2025-05-25', 'Android', 'Arkansas');
+INSERT INTO users (user_id, first_name, last_name, created_at, device_type, location) 
+VALUES (4, 'Mo', 'Ramsey', '2025-05-25', 'Android', 'California');
+INSERT INTO users (user_id, first_name, last_name, created_at, device_type, location) 
+VALUES (5, 'Kole', 'Bogdonavic', '2025-05-18', 'iOS', 'Texas');
+INSERT INTO users (user_id, first_name, last_name, created_at, device_type, location) 
+VALUES (6, 'Joey', 'Smith', '2025-05-05', 'Android', 'Florida');
+INSERT INTO users (user_id, first_name, last_name, created_at, device_type, location) 
+VALUES (7, 'Peter', 'Yan', '2025-05-19', 'iOS', 'California');
+INSERT INTO users (user_id, first_name, last_name, created_at, device_type, location) 
+VALUES (8, 'Demetrious', 'Pereira', '2025-05-21', 'iOS', 'Missouri');
+INSERT INTO users (user_id, first_name, last_name, created_at, device_type, location) 
+VALUES (9, 'Benjamin', 'Kawasaki', '2025-05-25', 'Android', 'California');
+INSERT INTO users (user_id, first_name, last_name, created_at, device_type, location) 
+VALUES (10, 'Matthew', 'Glac', '2025-01-15', 'iOS', 'Maine');
