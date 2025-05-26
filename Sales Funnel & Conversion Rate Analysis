@@ -58,10 +58,52 @@ VALUES (10, 'Matthew', 'Glac', '2025-01-15', 'iOS', 'Maine');
 INSERT INTO sessions (sessions_id, user_id, session_start, session_end)
 VALUES (1, 5, '2025-05-03 05:33:02', '2025-05-03 07:19:02');
 INSERT INTO sessions (sessions_id, user_id, session_start, session_end)
-VALUES (2, 7, '2025-05-03 13:05:58', '2025-05-03 13:19:00');
+VALUES (2, 7, '2025-05-03 13:05:58', '2025-05-03 13:19:16');
 INSERT INTO sessions (sessions_id, user_id, session_start, session_end)
 VALUES (3, 1, '2025-05-23 15:33:02', '2025-05-23 18:19:01');
 INSERT INTO sessions (sessions_id, user_id, session_start, session_end)
 VALUES (4, 2, '2025-05-25 09:05:00', '2025-05-25 11:30:00');
 INSERT INTO sessions (sessions_id, user_id, session_start, session_end)
-VALUES (5, 3, '2025-05-25 10:10:00', '2025-05-25 11:30:00');
+VALUES (5, 3, '2025-05-25 10:10:33', '2025-05-25 11:30:03');
+INSERT INTO sessions (sessions_id, user_id, session_start, session_end)
+VALUES (6, 6, '2025-05-25 10:10:00', '2025-05-25 11:30:00');
+INSERT INTO sessions (sessions_id, user_id, session_start, session_end)
+VALUES (7, 4, '2025-04-02 09:00:00', '2025-04-02 11:00:11');
+INSERT INTO sessions (sessions_id, user_id, session_start, session_end)
+VALUES (8, 9, '2025-05-25 22:00:12', '2025-05-25 22:45:13');
+INSERT INTO sessions (sessions_id, user_id, session_start, session_end)
+VALUES (9, 8, '2025-05-25 10:10:45', '2025-05-25 11:30:00');
+INSERT INTO sessions (sessions_id, user_id, session_start, session_end)
+VALUES (10, 10, '2025-05-22 03:30:05', '2025-05-22 06:30:02');
+
+INSERT INTO products (product_id, product_name, product_price, product_category)
+VALUES (1, 'Product A', 10.99, 'Lite Version');
+INSERT INTO products (product_id, product_name, product_price, product_category)
+VALUES (2, 'Product B', 12.99, 'Standard Version');
+INSERT INTO products (product_id, product_name, product_price, product_category)
+VALUES (3, 'Product C', 14.99, 'Pro Version');
+INSERT INTO products (product_id, product_name, product_price, product_category)
+VALUES (4, 'Product D', 17.99, 'Pro Version Plus');
+
+INSERT INTO event_s (event_id, session_id, user_id, event_type, event_time, product_id) 
+VALUES (100, 3, 1, 'purchase', '2025-05-23 16:47:15', 1);
+INSERT INTO event_s (event_id, session_id, user_id, event_type, event_time, product_id) 
+VALUES (101, 7, 4, 'add_to_cart', '2025-04-02 10:13:42', 4);
+INSERT INTO event_s (event_id, session_id, user_id, event_type, event_time, product_id) 
+VALUES (102, 1, 5, 'purchase', '2025-05-03 06:08:27', 1);
+INSERT INTO event_s (event_id, session_id, user_id, event_type, event_time, product_id) 
+VALUES (103, 2, 7, 'purchase', '2025-05-03 13:11:43', 2);
+INSERT INTO event_s (event_id, session_id, user_id, event_type, event_time, product_id)
+VALUES (104, 4, 2, 'add_to_cart', '2025-05-25 10:02:37', 4);
+INSERT INTO event_s (event_id, session_id, user_id, event_type, event_time, product_id)
+VALUES (105, 5, 3, 'add_to_cart', '2025-05-25 10:52:18', 1);
+INSERT INTO event_s (event_id, session_id, user_id, event_type, event_time, product_id)
+VALUES (106, 6, 6, 'purchase', '2025-05-25 11:08:44', 2);
+INSERT INTO event_s (event_id, session_id, user_id, event_type, event_time, product_id)
+VALUES (107, 8, 9, 'purchase', '2025-05-25 22:27:39', 2);
+INSERT INTO event_s (event_id, session_id, user_id, event_type, event_time, product_id)
+VALUES (108, 9, 8, 'purchase', '2025-05-25 10:37:28', 2);
+INSERT INTO event_s (event_id, session_id, user_id, event_type, event_time, product_id)
+VALUES (109, 10, 10, 'purchase', '2025-05-22 04:47:16', 2);
+
+
