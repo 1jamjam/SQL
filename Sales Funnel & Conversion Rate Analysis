@@ -117,5 +117,21 @@ VALUES (4, 'Product D', 17.99, 'Pro Version Plus');
 -- Are there specific product categories that result in higher purchase conversion rates across sessions, and what user characteristics (e.g., device, location) are correlated with these conversions?
 -- SOLUTION BELOW: 
 
+-- First, we MAP events to product categories using JOINs. 
+
+SELECT 
+	e.event_id,
+    e.event_type,
+    e.event_time,
+    e.product_id, 
+    p.product_name 
+FROM
+	event_s e 
+JOIN 
+	products p 
+ON 
+	e.product_id = p.product_id
+;
+
 
 
