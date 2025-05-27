@@ -1,7 +1,4 @@
--- Conducting a customer journey analysis in tracking customer journey from visiting product pages to adding to cart to purchase.
--- Goal is to figure out Drop-off rates at each stage, Conversion rates by device, location, and time. 
-
---Progress Below:
+/* 
 CREATE TABLE users (
 	user_id INT,
   	first_name VARCHAR(50),
@@ -10,29 +7,7 @@ CREATE TABLE users (
   	device_type VARCHAR(50),
   	location VARCHAR(50)
 );
-
-CREATE TABLE sessions (
-	sessions_id INT,
-  	user_id INT,
-  	session_start DATETIME,
-  	session_end DATETIME
-);
-
-CREATE TABLE event_s (
-	event_id INT,
-  	session_id INT,
-  	user_id INT,
-  	event_type VARCHAR(50), 
-  	event_time DATETIME,
-  	product_id INT
-);
-
-CREATE TABLE products (
-	product_id INT,
-  	product_name VARCHAR(50),
-  	product_price FLOAT,
-  	product_category VARCHAR(50)
-);
+*/
 
 INSERT INTO users (user_id, first_name, last_name, created_at, device_type, location) 
 VALUES (1, 'Gabriel', 'Oliveira', '2025-05-25', 'iOS', 'Georgia');
@@ -55,6 +30,16 @@ VALUES (9, 'Benjamin', 'Kawasaki', '2025-05-25', 'Android', 'California');
 INSERT INTO users (user_id, first_name, last_name, created_at, device_type, location) 
 VALUES (10, 'Matthew', 'Glac', '2025-01-15', 'iOS', 'Maine');
 
+
+/*
+CREATE TABLE sessions (
+	sessions_id INT,
+  	user_id INT,
+  	session_start DATETIME,
+  	session_end DATETIME
+);
+*/
+
 INSERT INTO sessions (sessions_id, user_id, session_start, session_end)
 VALUES (1, 5, '2025-05-03 05:33:02', '2025-05-03 07:19:02');
 INSERT INTO sessions (sessions_id, user_id, session_start, session_end)
@@ -76,14 +61,16 @@ VALUES (9, 8, '2025-05-25 10:10:45', '2025-05-25 11:30:00');
 INSERT INTO sessions (sessions_id, user_id, session_start, session_end)
 VALUES (10, 10, '2025-05-22 03:30:05', '2025-05-22 06:30:02');
 
-INSERT INTO products (product_id, product_name, product_price, product_category)
-VALUES (1, 'Product A', 10.99, 'Lite Version');
-INSERT INTO products (product_id, product_name, product_price, product_category)
-VALUES (2, 'Product B', 12.99, 'Standard Version');
-INSERT INTO products (product_id, product_name, product_price, product_category)
-VALUES (3, 'Product C', 14.99, 'Pro Version');
-INSERT INTO products (product_id, product_name, product_price, product_category)
-VALUES (4, 'Product D', 17.99, 'Pro Version Plus');
+/*
+CREATE TABLE event_s (
+	event_id INT,
+  	session_id INT,
+  	user_id INT,
+  	event_type VARCHAR(50), 
+  	event_time DATETIME,
+  	product_id INT
+);
+*/
 
 INSERT INTO event_s (event_id, session_id, user_id, event_type, event_time, product_id) 
 VALUES (100, 3, 1, 'purchase', '2025-05-23 16:47:15', 1);
@@ -105,6 +92,26 @@ INSERT INTO event_s (event_id, session_id, user_id, event_type, event_time, prod
 VALUES (108, 9, 8, 'purchase', '2025-05-25 10:37:28', 2);
 INSERT INTO event_s (event_id, session_id, user_id, event_type, event_time, product_id)
 VALUES (109, 10, 10, 'purchase', '2025-05-22 04:47:16', 2);
+
+/*
+CREATE TABLE products (
+	product_id INT,
+  	product_name VARCHAR(50),
+  	product_price FLOAT,
+  	product_category VARCHAR(50)
+);
+*/
+
+
+INSERT INTO products (product_id, product_name, product_price, product_category)
+VALUES (1, 'Product A', 10.99, 'Lite Version');
+INSERT INTO products (product_id, product_name, product_price, product_category)
+VALUES (2, 'Product B', 12.99, 'Standard Version');
+INSERT INTO products (product_id, product_name, product_price, product_category)
+VALUES (3, 'Product C', 14.99, 'Pro Version');
+INSERT INTO products (product_id, product_name, product_price, product_category)
+VALUES (4, 'Product D', 17.99, 'Pro Version Plus');
+
 
 -- BUSINESS CASE 1:
 -- Are there specific product categories that result in higher purchase conversion rates across sessions, and what user characteristics (e.g., device, location) are correlated with these conversions?
