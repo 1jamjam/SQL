@@ -106,4 +106,9 @@ VALUES (108, 9, 8, 'purchase', '2025-05-25 10:37:28', 2);
 INSERT INTO event_s (event_id, session_id, user_id, event_type, event_time, product_id)
 VALUES (109, 10, 10, 'purchase', '2025-05-22 04:47:16', 2);
 
+-- BUSINESS CASE 1:
+-- Are there specific product categories that result in higher purchase conversion rates across sessions, and what user characteristics (e.g., device, location) are correlated with these conversions?
+-- SOLUTION BELOW: 
+
+
 
