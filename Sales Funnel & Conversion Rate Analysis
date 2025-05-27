@@ -124,7 +124,8 @@ SELECT
     e.event_type,
     e.event_time,
     e.product_id, 
-    p.product_name 
+    p.product_name,
+    p.product_category
 FROM
 	event_s e 
 JOIN 
